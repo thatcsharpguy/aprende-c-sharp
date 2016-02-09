@@ -8,6 +8,8 @@ namespace LinqPost3
 
 		public int TeacherId { get; set; }
 
+        public string Level { get; set; }
+
 		public string Name { get; set; }
 	}
 }
