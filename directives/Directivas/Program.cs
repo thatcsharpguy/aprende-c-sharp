@@ -26,6 +26,9 @@ namespace Directivas
             Console.WriteLine("Hola o mundo y ¡pizza!");
 #endif
 
+#if DEBUG
+            Console.WriteLine("Hola amigo desarrollador");
+#endif
 
             #region Super bloque de código
             Console.WriteLine("Hola");
@@ -48,11 +51,6 @@ namespace Directivas
             if (1 != null) ;
 #pragma warning restore
 
-        }
-
-        int UnUsed()
-        {
-            return 0;
         }
     }
 }
