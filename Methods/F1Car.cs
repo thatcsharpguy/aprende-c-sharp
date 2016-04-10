@@ -4,23 +4,31 @@ namespace Methods
 {
     public class F1Car
     {
-        public F1Car()
+        public F1Car(string team)
         {
+            Team = team;
         }
+
+        public string Team { get; private set; }
 
         public bool IsRunning { get; private set; }
 
         internal static F1Car GetDefaultCar()
         {
-            return new F1Car();
+            return new F1Car("Default");
+        }
+            
+        public Driver Driver 
+        { 
+            get {return _currentDriver;}
         }
 
-        private Pilot _currentPilot;
-        public void ChangeDriver(Pilot newPilot)
+        private Driver _currentDriver;
+        public void ChangeDriver(Driver newDriver)
         {
-            if (!newPilot.Equals(_currentPilot))
+            if (!newDriver.Equals(_currentDriver))
             {
-                _currentPilot = newPilot;
+                _currentDriver = newDriver;
             }
         }
 
@@ -31,7 +39,7 @@ namespace Methods
 
         public bool TryStartEngine()
         {
-            if (_currentPilot == null)
+            if (_currentDriver == null)
             {
                 return false;
             }
