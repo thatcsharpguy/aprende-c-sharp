@@ -4,7 +4,7 @@ namespace Parciales
 {
     partial class Program
     {
-        public static void W(string line)
+        public static void Write(string line)
         {
             Console.WriteLine(line);
         }

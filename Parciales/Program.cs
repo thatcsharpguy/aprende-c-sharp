@@ -6,7 +6,13 @@ namespace Parciales
     {
         public static void Main(string[] args)
         {
-            W("Hola mundo!");
+            Write(HelloWorldString);
         }
+    }
+
+    // Class constants
+    partial class Program
+    {
+        private const string HelloWorldString = "Hola mundo!";
     }
 }

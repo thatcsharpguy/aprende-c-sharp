@@ -4,8 +4,9 @@ namespace Parciales
 {
     public partial class Core
     {
-        public Core()
+        byte[] TakePhoto(string camera) 
         {
+            return new byte[0];
         }
     }
 }
