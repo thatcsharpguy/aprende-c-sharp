@@ -36,6 +36,8 @@ namespace Params
             PromediaCalificacionesArray(new []{ alumno1, alumno2 });
             PromediaCalificacionesParams(alumno1, alumno2);
 
+            Console.Read();
+
         }
 
 
