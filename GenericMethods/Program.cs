@@ -33,7 +33,8 @@ namespace GenericMethods
             var footballPlayer = new FootballPlayer { Name = "Alex", Height = 183, Weight = 82 };
             Console.WriteLine(footballPlayer);
 
-            // var newBaseballPlayer = ChangeSport(footballPlayer); // Error, los tipos no pueden ser inferidos            var newBaseballPlayer = ChangeSport<BaseballPlayer, FootballPlayer>(footballPlayer);
+            // var newBaseballPlayer = ChangeSport(footballPlayer); // Error, los tipos no pueden ser inferidos
+            var newBaseballPlayer = ChangeSport<BaseballPlayer, FootballPlayer>(footballPlayer);
             Console.WriteLine(newBaseballPlayer);
 
             Console.Read();
