@@ -23,12 +23,12 @@ namespace Enums
     [Flags]
     public enum ProgrammingLanguages
     {
-        FSharp,
-        CSharp,
-        Swift,
-        Java,
-        ObjectiveC,
-        Assembly,
+        FSharp = 1,
+        CSharp = 2,
+        Swift= 4,
+        Java = 8,
+        ObjectiveC = 16,
+        Assembly = 32
         // Html = 120 // <- Possible but not recommended
     }
 
@@ -45,6 +45,27 @@ namespace Enums
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hobbies:\n");
+            var misHobbies = Hobbies.Code;
+            Console.WriteLine(misHobbies);
+            Console.WriteLine((int)misHobbies);
+
+            misHobbies = (Hobbies)1;
+            Console.WriteLine(misHobbies);
+            Console.WriteLine((int)misHobbies);
+
+
+            Console.WriteLine("Programming languages:\n");
+            var pl1 = ProgrammingLanguages.CSharp | ProgrammingLanguages.FSharp;
+            Console.WriteLine(pl1);
+            Console.WriteLine((int)pl1);
+
+            var pl2 = ProgrammingLanguages.Java | ProgrammingLanguages.Swift | ProgrammingLanguages.CSharp;
+            Console.WriteLine(pl2);
+            Console.WriteLine((int)pl2);
+
+
+            Console.Read();
         }
     }
 }
