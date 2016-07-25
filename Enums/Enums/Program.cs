@@ -6,66 +6,87 @@ using System.Threading.Tasks;
 
 namespace Enums
 {
-    public enum Hobbies
-    {
-        Code,
-        Tv,
-        Sleep
-    }
+	public enum TextAlign
+	{
+		Right,
+		Left,
+		Center,
+		Justify
+	}
 
-    public enum AssociationFootball
-    {
-        Soccer = 1,
-        Football = Soccer * 2,
-        Futbol = Football * 2,
-    }
+	public enum OperatingSystems
+	{
+		Windows = 1,    // 000001
+		Mac = 2,        // 000010
+		Linux = 4,      // 000100
+		Other = 8       // 001000
+	}
 
-    [Flags]
-    public enum ProgrammingLanguages
-    {
-        FSharp = 1,
-        CSharp = 2,
-        Swift= 4,
-        Java = 8,
-        ObjectiveC = 16,
-        Assembly = 32
-        // Html = 120 // <- Possible but not recommended
-    }
+	public enum AssociationFootball
+	{
+		Soccer = 1,
+		Football = Soccer * 2,
+		Futbol = Football * 2,
+	}
 
-    public enum WeirdNumbers : short
-    {
-        One = 123,
-        Two = 431,
-        Three = 431,
-        Four = 120,
-        //Gugol = 100000000000000 // 100000000000000 is not a short
-    }
+	public enum Months : short
+	{
+		January = 123,
+		February = 431,
+		March = 432,
+		April = 120,
+		// Jupiter = 100000000000000 // 100000000000000 is not a short
+	}
+
+	[Flags]
+	public enum DaysOfWeek 
+	{
+		Sun = 1, Mon = 2, Tue = 4, 
+		Wed = 8, Thu = 16, Fri = 32, 
+		Sat = 64
+	}
 
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hobbies:\n");
-            var misHobbies = Hobbies.Code;
-            Console.WriteLine(misHobbies);
-            Console.WriteLine((int)misHobbies);
+            Console.WriteLine("Text Align:\n");
+			var textAlignment = TextAlign.Center;
+            Console.WriteLine(textAlignment);
+            Console.WriteLine((int)textAlignment);
 
-            misHobbies = (Hobbies)1;
-            Console.WriteLine(misHobbies);
-            Console.WriteLine((int)misHobbies);
+            textAlignment = (TextAlign)1;
+            Console.WriteLine(textAlignment);
+            Console.WriteLine((int)textAlignment);
 
+			switch (textAlignment)
+			{
+				case TextAlign.Center:
+					Console.WriteLine("Texto centrado");
+				break;
+			}
 
-            Console.WriteLine("Programming languages:\n");
-            var pl1 = ProgrammingLanguages.CSharp | ProgrammingLanguages.FSharp;
+            Console.WriteLine("Operating systems:\n");
+            var pl1 = OperatingSystems.Mac | OperatingSystems.Windows;
             Console.WriteLine(pl1);
             Console.WriteLine((int)pl1);
 
-            var pl2 = ProgrammingLanguages.Java | ProgrammingLanguages.Swift | ProgrammingLanguages.CSharp;
+			if (pl1.HasFlag(OperatingSystems.Mac))
+			{
+				Console.WriteLine("User knows Mac"); // <-- This will execute
+			}
+
+            var pl2 = OperatingSystems.Other | OperatingSystems.Linux | OperatingSystems.Mac;
             Console.WriteLine(pl2);
             Console.WriteLine((int)pl2);
 
+			Console.WriteLine("Days of week:\n");
 
-            Console.Read();
+			var alarmGoesOffOn = DaysOfWeek.Mon | DaysOfWeek.Wed | DaysOfWeek.Fri;
+			Console.WriteLine("Alarm goes off on: " + alarmGoesOffOn);
+
+
+			Console.Read();
         }
     }
 }

@@ -35,20 +35,7 @@ namespace Usings
 
             Console.Write("\r\n\r\n");
 
-            //using (var desechable2 = new Desechable())
-            //{
-            //    try
-            //    {
-            //        desechable2.DoSomethingWithException();
-            //    }
-            //    catch
-            //    {
-            //        Console.WriteLine("¡¡¡¡¡Error!!!!!");
-            //    }
-            //}
-
-            var desechable2 = new Desechable();
-            try
+            using (var desechable2 = new Desechable())
             {
                 try
                 {
@@ -59,13 +46,26 @@ namespace Usings
                     Console.WriteLine("¡¡¡¡¡Error!!!!!");
                 }
             }
-            finally
-            {
-                if (desechable2 != null)
-                {
-                    ((IDisposable)desechable2).Dispose();
-                }
-            }
+
+            //var desechable2 = new Desechable();
+            //try
+            //{
+            //    try
+            //    {
+            //        desechable2.DoSomethingWithException();
+            //    }
+            //    catch
+            //    {
+            //        Console.WriteLine("¡¡¡¡¡Error!!!!!");
+            //    }
+            //}
+            //finally
+            //{
+            //    if (desechable2 != null)
+            //    {
+            //        ((IDisposable)desechable2).Dispose();
+            //    }
+            //}
 
             Console.Write("\r\n\r\n");
 
