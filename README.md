@@ -1,2 +1,35 @@
-# aprende-c-sharp
-Código de los post del tag aprende-c-sharp en el blog.
+# Aprende C#  
+
+Aprende C# en el blog de That C# guy, visita la etiqueta [#AprendeCSharp](http://thatcsharpguy.com/tag/AprendeCSharp/).  
+
+El código de aguí corresponde a los ejemplos de cada tema. Los temas son:  
+
+ - Delegados ([post](http://thatcsharpguy.com/post/delegados-en-c-sharp/) , [código](#)) 
+ - Func y Action ([post](http://thatcsharpguy.com/post/func-y-action-en-c-sharp/) , [código](#))  
+ - Lambdas ([post](http://thatcsharpguy.com/post/lambdas-en-c-sharp/) , [código](#)) 
+ - ¿Qué son los alias? ([post](http://thatcsharpguy.com/post/string-vs-system-string-es/) , [código](#))  
+ - Creando alias propios ([post](http://thatcsharpguy.com/post/creando-propios-alias/) , [código](#))  
+ - Tipos de dato ([post](http://thatcsharpguy.com/post/tipos-dato-c-sharp/) , [código](#))  
+ - Tipos nullables ([post](http://thatcsharpguy.com/post/tipos-nullables-en-c-sharp/) , [código](#))  
+ - Arreglos unidimensionales ([post](http://thatcsharpguy.com/post/arreglos-en-c-sharp-parte-1/) , [código](#))  
+ - Arreglos multidimensionales escalonados ([post](http://thatcsharpguy.com/post/arreglos-en-c-sharp-parte-2/) , [código](#))  
+ - Arreglos multidimensionales rectangulares ([post](http://thatcsharpguy.com/post/arreglos-en-c-sharp-parte-3/) , [código](#))  
+ - La palabra `var` ([post](http://thatcsharpguy.com/post/var-en-c-sharp/) , [código](#))  
+ - Tipos anónimos ([post](http://thatcsharpguy.com/post/anonimos-en-c-sharp/) , [código](#))  
+ - ¿Puedo programar juegos? ([post](http://thatcsharpguy.com/post/c-sharp-juegos/) , [código](#))  
+ - Seis características de C# 6 ([post](http://thatcsharpguy.com/post/c-sharp-seis/) , [código](#))  
+ - Sentencias, expresiones y operadores ([post](http://thatcsharpguy.com/post/sentencias-expresiones-operadores/) , [código](#))  
+ - LINQ, parte 1 ([post](http://thatcsharpguy.com/post/linq-en-c-sharp/) , [código](#))   
+ - LINQ, parte 2 ([post](http://thatcsharpguy.com/post/linq-en-c-sharp-2/) , [código](#))   
+ - LINQ, parte 3 ([post](http://thatcsharpguy.com/post/linq-en-c-sharp-3/) , [código](#))   
+ - Directivas de preprocesamiento ([post](http://thatcsharpguy.com/post/directivas-preprocesador-c-sharp/) , [código](#))   
+ - Inicializadores ([post](http://thatcsharpguy.com/post/inicializadores-c-sharp/) , [código](#))   
+ - Métodos ([post](http://thatcsharpguy.com/post/metodos-c-sharp/) , [código](#))   
+ - Parámetros `ref` y `out` ([post](http://thatcsharpguy.com/post/out-ref-c-sharp/) , [código](#))    
+ - Parámetros `params` ([post](http://thatcsharpguy.com/post/params-c-sharp/) , [código](#))    
+ - `Tuples` ([post](http://thatcsharpguy.com/post/tuples-c-sharp/) , [código](#))    
+ - Clases `partial` ([post](http://thatcsharpguy.com/post/clases-partial-c-sharp/) , [código](#))    
+ - Clases genéricas ([post](http://thatcsharpguy.com/post/genericos-c-sharp-clases/) , [código](#))    
+ - Métodos genéricos ([post](http://thatcsharpguy.com/post/genericos-c-sharp-metodos/) , [código](#))    
+ - Map, reduce y filter ([post](http://thatcsharpguy.com/post/usos-using-2/) , [código](#))     
+ - `enum`s ([post](http://thatcsharpguy.com/post/c-sharp-enums/) , [código](#))
