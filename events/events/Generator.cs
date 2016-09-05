@@ -24,7 +24,9 @@ namespace Events
 
 		public delegate void GeneratingNumberEventHandler(Generator sender);
 
-		public event GeneratingNumberEventHandler GeneratingNumber;
+		public event GeneratingNumberEventHandler GeneratingNumber; 
+
+		public event EventHandler GeneratingNumber1;
 
 		public event EventHandler<int> EvenNumberGenerated;
 
@@ -39,23 +41,29 @@ namespace Events
 			{
 				Thread.Sleep(500);
 
-					if (GeneratingNumber!= null)
+					if (GeneratingNumber != null)
 					{
 						GeneratingNumber(this);
 					}
+
+					if (GeneratingNumber1 != null)
+					{
+						GeneratingNumber1(this, EventArgs.Empty);
+					}
+
 					var generated = r.Next();
 
 					if (generated % 2 == 0)
 					{
 						if (EvenNumberGenerated != null)
 						{
-							EvenNumberGenerated(generated, generated);
+							EvenNumberGenerated(this, generated);
 						}
 
-						if (EvenNumberGeneratedAction != null)
-						{
-							EvenNumberGeneratedAction(generated);
-						}
+						//if (EvenNumberGeneratedAction != null)
+						//{
+						//	EvenNumberGeneratedAction(generated);
+						//}
 					}
 					//Console.WriteLine(generated);
 				}

@@ -13,13 +13,20 @@ namespace Events
 
 			g = new Generator(name);
 
-
 			g.GeneratingNumber += G_GeneratingNumber;
+
+			g.GeneratingNumber1 += (sender, e) => 
+			{
+				var generador = sender as Generator;
+				Console.WriteLine(generador.Name + " generará un número (EventHandler)");
+			};
 
 			g.EvenNumberGenerated += (sender, number) => 
 			{
-				Console.WriteLine("Se generó el número: " + number + " (manejador 1)");
+				Console.WriteLine("Se generó el número par: " + number + " (manejador 1)");
 			};
+
+			g.EvenNumberGenerated += G_EvenNumberGenerated;
 
 			g.EvenNumberGeneratedAction += (obj) => 
 			{  
@@ -33,7 +40,6 @@ namespace Events
 			g.EvenNumberGeneratedAction = null;
 
 
-			g.EvenNumberGenerated += G_EvenNumberGenerated;
 
 			g.Start();
 
@@ -42,17 +48,18 @@ namespace Events
 
 		static void G_GeneratingNumber(Generator sender)
 		{
-			var myGenerator = sender as Generator;
-			Console.WriteLine(myGenerator.Name + " generará un número");
+			Console.WriteLine(sender.Name + " generará un número");
 		}
 
 		static void G_EvenNumberGenerated(object sender, int number)
 		{
-			if (number % 3 == 0)
+			Console.Write("Se generó el número par" + number + " (manejador 2)");
+			if (number % 7 == 0)
 			{
-				Console.WriteLine("Se generó el número: " + number + "  que también es multiplo de 3, bye bye!");
+				Console.Write(" que además es múltiplo de 7, bye bye!");
 				g.EvenNumberGenerated -= G_EvenNumberGenerated;
 			}
+			Console.WriteLine();
 		}
 	}
 }

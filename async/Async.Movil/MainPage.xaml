@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Async.Movil" x:Class="Async.Movil.MainPage">
+	<StackLayout Spacing="5">
+		<ProgressBar x:Name="progressBar"></ProgressBar>
+		<StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+			<Button HorizontalOptions="FillAndExpand" x:Name="asyncButton" Text="Async" />
+			<Button HorizontalOptions="FillAndExpand" x:Name="normalButton" Text="Normal" />
+		</StackLayout>
+		<Label  HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="Center" x:Name="descLabel" Text="0" FontSize="Large" />
+			<Button x:Name="countButton" Text="Cuenta" />
+		<StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+		<Label  HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="Center" x:Name="secondsLabel" Text="0" FontSize="Large" />
+		<Label  HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="Center" x:Name="countLabel" Text="0" FontSize="Large" />
+		</StackLayout>
+	</StackLayout>
+</ContentPage>
