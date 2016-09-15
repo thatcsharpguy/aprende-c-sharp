@@ -21,6 +21,8 @@ namespace Resxs
 
         static void Main(string[] args)
         {
+			var mx = new CultureInfo("es-MX");
+
             var currentThread = Thread.CurrentThread;
             int currentLanguage = 0;
             do
@@ -42,7 +44,7 @@ namespace Resxs
             }
             Console.WriteLine("\t" + Resources.Strings.Exit + ": -1");
 
-            return Int32.Parse(Console.ReadLine());
+            return Int32.Parse(Console.ReadLine() ?? "0");
         }
     }
 }

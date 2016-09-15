@@ -11,7 +11,7 @@ namespace Attributes
         {
             var phone = new Nokia3310();
 
-            var context = new ValidationContext( phone, serviceProvider: null, items: null);
+            var context = new ValidationContext(phone, serviceProvider: null, items: null);
             var results = new List<ValidationResult>();
 
             bool balanceIsOk = false;
@@ -32,6 +32,34 @@ namespace Attributes
             } while (!balanceIsOk);
 
             phone.Call("0118 999 881 99 9119 7253");
+
+
+			// Custom attributes
+			Console.WriteLine("= Custom attributes");
+
+			var phoneResults = new List<ValidationResult>();
+
+			var iPhone = new IPhone();
+			iPhone.Carrier = "Telcel,AT&T";
+
+			var iPhoneContext = new ValidationContext(iPhone, serviceProvider: null, items: null);
+
+			if (Validator.TryValidateObject(iPhone, iPhoneContext, phoneResults, true))
+				Console.WriteLine("Tu iPhone es válido");
+			else 
+				Console.WriteLine("Tu iPhone es inválido");
+
+			var galaxy = new Galaxy();
+			galaxy.Carrier = "Sprint,Movistar";
+
+			var galaxyContext = new ValidationContext(galaxy, serviceProvider: null, items: null);
+
+			if (Validator.TryValidateObject(galaxy, galaxyContext, phoneResults, true))
+				Console.WriteLine("Tu Galaxy es válido");
+			else
+				Console.WriteLine("Tu Galaxy es inválido");
+
+
             Console.Read();
 		}
 	}

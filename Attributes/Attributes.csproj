@@ -36,6 +36,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Nokia3310.cs" />
+    <Compile Include="ValidCarrierAttribute.cs" />
+    <Compile Include="IPhone.cs" />
+    <Compile Include="Galaxy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
