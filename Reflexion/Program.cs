@@ -12,17 +12,16 @@ namespace Reflexion
     {
         static void Main(string[] args)
         {
-            var zero = "0";
+			var zero = "0";
 
-            Type type = zero.GetType();
-            Assembly assembly = type.Assembly;
+			Type type = zero.GetType();
+			Console.WriteLine(type); // System.String
 
-            Console.WriteLine(type);
-            Console.WriteLine(type.Assembly);
+			Assembly assembly = type.Assembly;
+			Console.WriteLine(type.Assembly); // mscorlib, Version=4.0.0.0, Culture=neutral,
 
             foreach (var ty in assembly.GetTypes()
-                .Where(ty => ty.FullName.Split('.').Count() == 2 &&
-                    ty.Name.StartsWith("Int")))
+                .Where(ty => ty.Name.StartsWith("Int32")))
             {
                 Console.WriteLine(ty);
             }
@@ -44,7 +43,7 @@ namespace Reflexion
 
             foreach (var att in carrierProperty.GetCustomAttributes())
             {
-                Console.WriteLine(att);
+				Console.WriteLine(att.GetType().Name);
             }
 
             var propertiesWithDisplayName = from prop in t.GetProperties()
