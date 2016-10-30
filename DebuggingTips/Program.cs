@@ -10,8 +10,12 @@ namespace DebuggingTips
 			Console.WriteLine("Solo visible en modo debug, directiva: DEBUG");
 #endif
 
-			var tc = new TestClass() { Propiedad1 = "Uno, dos y tres" };
-			Console.WriteLine(tc);
+			var tc = new TestClass() { Propiedad1 = "Uno" };
+			Console.WriteLine(tc + " // Console.WriteLine ");
+			System.Diagnostics.Debug.WriteLine(tc + " // Debug.WriteLine ");
+			System.Diagnostics.Debug.WriteLineIf(tc.Propiedad1.Equals("Dos"), tc);
+
+			System.Diagnostics.Debug.Assert(tc.Propiedad1.Equals("Dos"));
 
 			Console.WriteLine("Hello World!");
 		}

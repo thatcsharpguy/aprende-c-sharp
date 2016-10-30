@@ -9,10 +9,6 @@ namespace DebuggingTips
 		public string Propiedad1 { get; set; }
 		public int Propiedad2 { get; set; }
 
-		public TestClass()
-		{
-		}
-
 		//public override string ToString()
 		//{
 		//	return string.Format("{0}: {1}", nameof(Propiedad1), Propiedad1);
