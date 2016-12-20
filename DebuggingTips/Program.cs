@@ -15,8 +15,6 @@ namespace DebuggingTips
 			System.Diagnostics.Debug.WriteLine(tc + " // Debug.WriteLine ");
 			System.Diagnostics.Debug.WriteLineIf(tc.Propiedad1.Equals("Dos"), tc);
 
-			System.Diagnostics.Debug.Assert(tc.Propiedad1.Equals("Dos"));
-
 			Console.WriteLine("Hello World!");
 		}
 	}
