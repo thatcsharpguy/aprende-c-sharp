@@ -21,17 +21,26 @@ namespace Operadores
             var raph = new Toy { Name = "Raphael", Price = 25 };
             var splinter = new Toy { Name = "Master Splinter", Price = 30 };
 
+            Console.WriteLine(dory.Name + ">" + woody.Name + ": " + (dory > woody));
+			Console.WriteLine(dory.Name + "<" + woody.Name + ": " + (dory < woody));
             Console.WriteLine(buzzLightyear.Name + "==" + woody.Name + " = " + (buzzLightyear == woody));
             Console.WriteLine(dory.Name + "==" + woody.Name + ": " + (dory == woody));
             Console.WriteLine(dory.Name + "==" + woody.Name + ": " + (dory == woody));
-            Console.WriteLine(dory.Name + ">" + woody.Name + ": " + (dory > woody));
-            Console.WriteLine(dory.Name + "<" + woody.Name + ": " + (dory < woody));
+			//Console.WriteLine(leo.Name + "<=" + 10d + ": " + (leo < 10d));
             Console.WriteLine(splinter.Name + ">=" + woody.Name + ": " + (splinter >= woody));
-            Console.WriteLine(leo.Name + "<=" + raph.Name + ": " + (leo <= raph));
+			Console.WriteLine(leo.Name + "<=" + raph.Name + ": " + (leo <= raph));
             Console.WriteLine();
 
+			Console.WriteLine(dory.Name + ">" + woody.Name + ": " + (dory > woody));
+			Console.WriteLine(dory.Name + "<" + woody.Name + ": " + (dory < woody));
+			Console.WriteLine(buzzLightyear.Name + "==" + woody.Name + " = " + (buzzLightyear == woody));
+			Console.WriteLine(dory.Name + "==" + woody.Name + ": " + (dory == woody));
+			Console.WriteLine(splinter.Name + ">=" + woody.Name + ": " + (splinter >= woody));
+			Console.WriteLine(leo.Name + "<=" + raph.Name + ": " + (leo <= raph));
+			Console.WriteLine();
 
-            var toyStoryBundle = buzzLightyear + woody;
+
+            Bundle toyStoryBundle = buzzLightyear + woody;
             Console.WriteLine(toyStoryBundle);
 
             //var findingNemoBundle = dory + marlin + nemo;

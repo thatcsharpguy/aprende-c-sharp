@@ -10,20 +10,20 @@ namespace Operadores
     public class Bundle : IEnumerable<Toy>
     {
         public int Size { get; private set; }
-        public int ToyCount { get { return TrueBox.Count; } }
+		public int ToyCount { get { return _storage.Count; } }
 
-        private List<Toy> TrueBox;
+        private List<Toy> _storage;
 
         public Bundle(int size)
         {
             Size = size;
-            TrueBox = new List<Toy>(Size);
+            _storage = new List<Toy>(Size);
         }
 
         public bool TryAddToy(Toy t)
         {
             if (ToyCount >= Size) return false;
-            TrueBox.Add(t);
+            _storage.Add(t);
             return true;
         }
 
@@ -61,17 +61,17 @@ namespace Operadores
 
         public override string ToString()
         {
-            return "Bundle (" + Size + "/" + ToyCount + ") [" + String.Join(", ", TrueBox.Select(t => t.Name)) + "]";
+            return "Bundle (" + Size + "/" + ToyCount + ") [" + String.Join(", ", _storage.Select(t => t.Name)) + "]";
         }
 
         public IEnumerator<Toy> GetEnumerator()
         {
-            return TrueBox.GetEnumerator();
+            return _storage.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return TrueBox.GetEnumerator();
+            return _storage.GetEnumerator();
         }
     }
 }
