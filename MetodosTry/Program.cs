@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
 
 namespace MetodosTry
 {
@@ -17,20 +20,6 @@ namespace MetodosTry
                 "0.1"
             };
 
-            foreach (var value in values)
-            {
-                var intValue = -1;
-                try
-                {
-                    intValue = int.Parse(value);
-                    Console.WriteLine("Cadena \"" + value + "\" resultado: " + intValue);
-                }
-                catch
-                {
-                    Console.WriteLine("Cadena \"" + value + "\" resultado: " + intValue + " (Ocurrió un error)");
-                }
-            }
-            Console.WriteLine();
 
             foreach (var value in values)
             {
@@ -58,6 +47,21 @@ namespace MetodosTry
 
             foreach (var value in values)
             {
+                var intValue = -1;
+                try
+                {
+                    intValue = int.Parse(value);
+                    Console.WriteLine("Cadena \"" + value + "\" resultado: " + intValue);
+                }
+                catch
+                {
+                    Console.WriteLine("Cadena \"" + value + "\" resultado: " + intValue + " (Ocurrió un error)");
+                }
+            }
+            Console.WriteLine();
+
+            foreach (var value in values)
+            {
                 int intValue;
                 if (int.TryParse(value, out intValue))
                     Console.WriteLine("Cadena \"" + value + "\" resultado: " + intValue);
@@ -68,4 +72,5 @@ namespace MetodosTry
             Console.ReadLine();
         }
     }
+
 }
