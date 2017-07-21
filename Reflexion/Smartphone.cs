@@ -16,5 +16,9 @@ namespace Reflexion
 
         [Display(Name = "Bloqueado")]
         public bool IsLocked { get; set; }
+
+        [Display(Name = "Numero de contactos")]
+        public int ContactCount { get; set; }
+
     }
 }

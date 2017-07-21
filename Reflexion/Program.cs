@@ -12,51 +12,70 @@ namespace Reflexion
     {
         static void Main(string[] args)
         {
-			var zero = "0";
+            var zero = "0";
 
-			Type type = zero.GetType();
-			Console.WriteLine(type); // System.String
+            Type type = zero.GetType();
+            Console.WriteLine(type); // System.String
 
-			Assembly assembly = type.Assembly;
-			Console.WriteLine(type.Assembly); // mscorlib, Version=4.0.0.0, Culture=neutral,
+            Assembly assembly = type.Assembly;
+            Console.WriteLine(type.Assembly); // mscorlib, Version=4.0.0.0, Culture=neutral,
 
+            Console.WriteLine();
             foreach (var ty in assembly.GetTypes()
                 .Where(ty => ty.Name.StartsWith("Int32")))
             {
                 Console.WriteLine(ty);
             }
 
+            Console.WriteLine();
             var int32Type = assembly.GetType("System.Int32");
 
-            var createdInt  = Activator.CreateInstance(int32Type);
+            var createdInt = Activator.CreateInstance(int32Type);
             Console.WriteLine(createdInt);
 
+
+            Console.WriteLine();
 
             var phone = new Smartphone();
             phone.IsLocked = true;
             phone.Carrier = "Entel";
 
-            var t = phone.GetType();
-
-            var carrierProperty = t.GetProperty("Carrier");
-
-
+            var phoneType = phone.GetType();
+            var carrierProperty = phoneType.GetProperty("Carrier");
             foreach (var att in carrierProperty.GetCustomAttributes())
             {
-				Console.WriteLine(att.GetType().Name);
+                Console.WriteLine(att.GetType().Name);
             }
 
-            var propertiesWithDisplayName = from prop in t.GetProperties()
+
+            Console.WriteLine();
+            var propertiesWithDisplayName = from prop in phoneType.GetProperties()
                                             where prop.GetCustomAttributes<DisplayAttribute>().Any()
                                             select prop;
-
             foreach (var property in propertiesWithDisplayName)
             {
                 var attr = property.GetCustomAttribute<DisplayAttribute>();
                 Console.WriteLine(attr.Name + ": " + property.GetValue(phone));
             }
 
+            Console.WriteLine();
+            Console.WriteLine("Escribe el nombre de la propiedad a modificar:");
+            var propertyName = Console.ReadLine();
+            var propertyToModify = phoneType.GetProperty(propertyName);
+
+            if (propertyToModify != null)
+            {
+                Console.WriteLine("Escribe el valor:");
+                var value = Console.ReadLine();
+                propertyToModify.SetValue(phone, Convert.ChangeType(value, propertyToModify.PropertyType));
+            }
+            else
+            {
+                Console.WriteLine("La propiedad " + propertyName + " no existe");
+            }
+
             Console.Read();
+
         }
     }
 }
