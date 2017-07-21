@@ -46,7 +46,7 @@
     <Compile Include="CanisLupus.cs" />
     <Compile Include="CanisLupusFamiliaris.cs" />
     <Compile Include="GranDanes.cs" />
-    <Compile Include="Poodle.cs" />
+    <Compile Include="Chihuahua.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

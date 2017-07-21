@@ -4,14 +4,15 @@ namespace Zoo
 {
     public class CanisLupusFamiliaris : CanisLupus
     {
+
         public void MoverOrejas()
         {
-            Console.WriteLine("Error: no tiene información sobre las orejas");
+            Console.WriteLine("Error: sin informaci¨®n");
         }
 
         public virtual void Ladrar()
         {
-            Console.WriteLine("Ladrido genérico");
+            Console.WriteLine("Ladrido gen¨¦rico");
         }
     }
 }

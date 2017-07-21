@@ -11,7 +11,7 @@ namespace Zoo
 
         public override void Ladrar()
         {
-            Console.WriteLine("Woof, woof");
+            Console.WriteLine("WOOF! WOOF!");
         }
     }
 }

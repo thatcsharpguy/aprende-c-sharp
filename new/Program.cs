@@ -12,23 +12,22 @@ namespace Zoo
         {
             Console.WriteLine("¡Perritos!");
 
-
             Console.WriteLine("Canis genérico:");
-            CanisLupusFamiliaris canisGenerico = new CanisLupusFamiliaris();
-            canisGenerico.Ladrar();
-            canisGenerico.MoverOrejas();
+            CanisLupusFamiliaris canis = new CanisLupusFamiliaris();
+            canis.Ladrar();
+            canis.MoverOrejas();
             Console.WriteLine();
 
-            Console.WriteLine("Poolde (Canis):");
-            CanisLupusFamiliaris poodleCanis = new Poodle();
-            poodleCanis.Ladrar();
-            poodleCanis.MoverOrejas();
+            Console.WriteLine("Chihuahua (Canis):");
+            CanisLupusFamiliaris chihuahuaCanis = new Chihuahua();
+            chihuahuaCanis.Ladrar();
+            chihuahuaCanis.MoverOrejas();
             Console.WriteLine();
 
-            Console.WriteLine("Poodle:");
-            Poodle poodle = new Poodle();
-            poodle.Ladrar();
-            poodle.MoverOrejas();
+            Console.WriteLine("Chihuahua:");
+            Chihuahua chihuahua = new Chihuahua();
+            chihuahua.Ladrar();
+            chihuahua.MoverOrejas();
             Console.WriteLine();
 
             Console.WriteLine("Gran danes (Canis):");
